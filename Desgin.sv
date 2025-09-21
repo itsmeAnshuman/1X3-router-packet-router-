@@ -1,19 +1,23 @@
-Company: 
-// Engineer: Anshuman Verma
+// Company: Personal Project / IIIT Ranchi
+// Engineer: Anshuman verma
 // 
-// Create Date: 5.09.2025 09:46:04
-// Design Name: 1X3 packet router using sv
+// Create Date: 05.09.2025 09:46:04
+// Design Name: 1x3_Packet_Router
 // Module Name: router_top
-// Project Name:1x3 router
-// Target Devices: 
-// Tool Versions: vivado 
-// Description: 
-// 
-// Dependencies: 
+// Project Name: 1X3Router_RTL_Design_and_Verification
+// Target Devices: FPGA/ASIC (Generic)
+// Tool Versions: Vivado
+// Description: Comprehensive testbench for 1x3 packet router with 9 test cases
+//              implementing scoreboard verification methodology
+// Dependencies: router_top.sv
 // 
 // Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
+// Revision 0.01 - Initial testbench with basic functionality
+// Revision 0.02 - Added comprehensive test cases and scoreboard
+// Additional Comments: Supports variable payload length, parity checking,
+//                     and timeout mechanisms
+// 1x3 Router Comprehensive Testbench
+// Implements 9 test cases with scoreboard verification
 // 1x3 Packet Router Top Module
 // Routes input packets to one of three output ports based on 2-bit address
 module router_top (
