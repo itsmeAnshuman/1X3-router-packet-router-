@@ -50,8 +50,7 @@ module router_tb();
         clock = 0;
         forever #5 clock = ~clock;
     end
-    
-    // Initialize all testbench signals
+
     task initialize();
         begin
             resetn = 0;
