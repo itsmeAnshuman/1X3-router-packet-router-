@@ -14,8 +14,7 @@
 // Revision:
 // Revision 0.01 - Initial testbench with basic functionality
 // Revision 0.02 - Added comprehensive test cases and scoreboard
-// Additional Comments: Supports variable payload length, parity checking,
-//                     and timeout mechanisms
+
 // 1x3 Router Comprehensive Testbench
 // Implements 9 test cases with scoreboard verification
 // 1x3 Packet Router Top Module
@@ -33,7 +32,7 @@ module router_top (
     output busy
 );
 
-    // Internal interconnect signals
+  
     wire [7:0] dout;
     wire [2:0] write_enb;
     wire [2:0] soft_reset;
@@ -58,7 +57,7 @@ module router_top (
     // Register Block - handles data buffering and parity calculation
     router_register REG (.clock(clock), .resetn(resetn), .packet_valid(packet_valid), .data_in(data_in), .fifo_full(full_state), .detect_add(detect_add), .ld_state(ld_state), .laf_state(laf_state), .full_state(full_state), .lfd_state(lfd_state), .rst_int_reg(rst_int_reg), .err(err), .parity_done(parity_done), .low_packet_valid(low_packet_valid), .dout(dout));
 
-    // Synchronizer - manages address decoding and timing control
+    // Synchronizer - manges address decoding and timing control
     router_sync SYNC (.clock(clock), .resetn(resetn), .data_in(data_in), .detect_add(detect_add), .write_enb_reg(write_enb_reg), .read_enb_0(read_enb_0), .read_enb_1(read_enb_1), .read_enb_2(read_enb_2), .write_enb(write_enb), .fifo_full(full_state), .full_0(full[0]), .full_1(full[1]), .full_2(full[2]), .empty_0(empty[0]), .empty_1(empty[1]), .empty_2(empty[2]), .soft_reset_0(soft_reset[0]), .soft_reset_1(soft_reset[1]), .soft_reset_2(soft_reset[2]), .vld_out_0(vld_out_0), .vld_out_1(vld_out_1), .vld_out_2(vld_out_2));
 
     // Three 16-deep FIFO buffers for each output port
